@@ -2647,7 +2647,7 @@ public abstract class OdfElement extends ElementNSImpl {
       } else if (node.getNodeType() == Node.ELEMENT_NODE) {
         if (node instanceof TextSpanElement) {
           buffer.append(((TextSpanElement) node).getTextContent());
-        } else if (node.getNodeName().equals("text:s")) {
+        } else if (node.getNodeName().contains("text:s")) {
           Integer count = ((TextSElement) node).getTextCAttribute();
           for (int j = 0; j < (count != null ? count : 1); j++) buffer.append(' ');
         } else if (node.getNodeName().equals("text:tab")) buffer.append('\t');
